@@ -1,62 +1,110 @@
 *{box-sizing: border-box;
 padding: 0;
-margin: 0;}
-#root{
-  height: 100%;
-  background-color:#e0e7ea;
+margin: 0;
+font-family: 'Playpen Sans', cursive;
 }
-.App {
+
+#root,.App{
+  height: 100%;
+  background-color:#EEEEEE;
   text-align: center;
-  height: 100%;
 }
-#TaskContainer
+
+.new-task-container{
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;  
+  position: relative;
+  
+}
+.Task-container
 {
   margin:15px auto;
-  background-color: #b9c8d9;
-  height: 75%;
-  width:85%;
-  border-radius: 20px;
+  padding: 15px 0;
+  background-color: #649b9b;
+  height: auto;
+  width:70%;
+  border-radius: 50px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   gap:10px;
 }
-.Header{padding-top:15px;}
+.Header{
+  padding:40px 0 ;
+}
 
 input[type=text]{
-  margin:15px;
-  text-align: center;
-  width:50%;
-  height: 5%;
+  height: 45px;
+  width: 100%;  /* changed */
+  background-color: #f9eacf;
   border-radius: 50px;
-  color:white;
+  padding-right: 100px;
+  outline: none;
+  border: 2px solid #313136;
+  padding-left:20px;
   font-size: 1.2rem;
-  border:none;
-  outline:none;
+
 }
 input[type=text]:focus{
-  background-color: #96b7d8;
+  background-color: #fad494;
 }
-button{
-  height: 5%;
-  width: 10%;
-  border:none;
-  border-radius:50px;
-  font-size: 20px;
-  background-color: #96b7d8;
+input[type=checkbox]{
+  
+  height:1.5rem;
+  width:1.5rem;
+  border:1px solid grey;
+  
+}
+input[type=checkbox]:checked{
+  background-color: green;
+  color:white;
+  border:1px solid green;
+  
+}
+.flex{
+  display: flex;
+  gap:20px;
+  padding-left: 30px;
 }
 
-button:hover{
-  background-color: #7b96b0;
-}
 .Task{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: auto;
-  padding: 10px;
+  height: 3.5rem;
+  /* padding: 10px; */
   width: 80%;
   border-radius: 50px;
-  background-color: rgb(222, 171, 120);
-  color: white;
+  background-color:#f9eacf;
+  border:2px solid #313136;
+  color: black;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+}
+.Task>p{
+  margin-left: 10px;
+}
+button{
+  width: 94px;
+  height: 100%;
+  background-color: #656769;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-style: none;
+  border-radius: 50px;
+}
+.new-task-btn{
+  position: absolute;
+  right: 0px;
+}
+.new-task-btn:hover{
+  background-color: #557C55;
+}
+.task-btn:hover{
+  background-color: #FA7070;
 }
