@@ -1,0 +1,37 @@
+
+/*animation line through*/
+.completed{
+    position: relative;
+    overflow: hidden;
+    color:#4a4a4a
+  }
+  .completed::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 0;
+    height: 2.5px;
+    background-color: rgb(88, 87, 87);
+    animation: line-through 0.2s linear forwards;
+  }
+  @keyframes line-through {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  .Task-completed{
+    animation: colors 0.5s linear forwards;
+  }
+  @keyframes colors {
+    0% {
+      background-color:#ffce74;
+    }
+    100% {
+        background-color:#f9eacf;
+    }
+  }

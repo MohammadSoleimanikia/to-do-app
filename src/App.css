@@ -1,7 +1,7 @@
 *{box-sizing: border-box;
 padding: 0;
 margin: 0;
-font-family: 'Playpen Sans', cursive;
+font-family: 'Roboto', sans-serif;
 }
 
 #root,.App{
@@ -32,8 +32,21 @@ font-family: 'Playpen Sans', cursive;
   align-items: center;
   gap:10px;
 }
-.Header{
+.header{
   padding:40px 0 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-text{
+  font-family: 'Dekko', cursive;
+  font-size: 5rem;
+  font-weight: 400;
+  color:#649b9b;
+}
+
+.logo{
+width:4rem;
 }
 
 input[type=text]{
@@ -78,13 +91,31 @@ input[type=checkbox]:checked{
   /* padding: 10px; */
   width: 80%;
   border-radius: 50px;
-  background-color:#f9eacf;
+  background-color:#ffce74;
   border:2px solid #313136;
   color: black;
   margin-top: 15px;
   font-size: 1.2rem;
   font-weight: 500;
   position: relative;
+}
+.Task-completed
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  /* padding: 10px; */
+  width: 80%;
+  border-radius: 50px;
+  border:2px solid #313136;
+  background-color:#ffce74;
+  color: black;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+
 }
 .Task>p{
   margin-left: 10px;
