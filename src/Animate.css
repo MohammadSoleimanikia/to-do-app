@@ -35,3 +35,8 @@
         background-color:#f9eacf;
     }
   }
+
+button{
+    transition: background-color 0.3s ease;
+}
+

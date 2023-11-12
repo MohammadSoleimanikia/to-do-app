@@ -1,6 +1,5 @@
-
-import './App.css';
 import './Animate.css'
+import './App.css';
 import React, { useState } from 'react';
 import Header from './components/Header';
 import NewTask from './components/NewTask';
@@ -11,6 +10,7 @@ function App() {
     // State variables for storing the todos and the input text
     const [todos, setTodos] = useState([]);
     const [inputText, setInputText] = useState('');
+    const [filter, setFilter] = useState('all');
 
     //event handler for input changes
     const handleInputChange=(e)=>
@@ -59,17 +59,42 @@ function App() {
       setTodos(todos.filter((todo)=>todo.id!==id));
     }
 
+    //event handler for filter change (all ,completed ,not completed)
+    const handleFilterChange = (filter) => {
+      setFilter(filter);
+    };
+
+    //filter the displayed todos in main page based on the clicked button
+    const filteredTodos = todos.filter((todo) => {
+      if (filter === 'completed') {
+        return todo.completed;
+      } else if (filter === 'not-completed') {
+        return !todo.completed;
+      }
+      return true; // Show all todos for 'all' filter
+    });
+
+
   return (
     <div className="App" >
       
       <Header text="ToDo" src={logo} />
       <NewTask onSubmit={handleFormSubmit} value={inputText} onChange={handleInputChange} placeholder="Enter a todo" type="submit"/>
+    
+      
+      <div className='filter-button-container'>
+        <button onClick={() => handleFilterChange('all')}>All</button>
+        <button onClick={() => handleFilterChange('completed')}>Completed</button>
+        <button onClick={() => handleFilterChange('not-completed')}>
+          Not‌ Completed
+        </button>
+      </div>
       <TaskContainer>
         
-        {todos.map((todo) => 
+        {filteredTodos.map((todo) => 
         (
-        <Task key={todo.id} text={todo.text} onClick={() => handleTodoDelete(todo.id)} checked={todo.completed}
-        onChange={() => handleCheckboxChange(todo.id)}/>
+        <Task text={todo.text} handleTodoDelete={() => handleTodoDelete(todo.id)} completed={todo.completed}
+        handleCheckboxChange={() => handleCheckboxChange(todo.id)}/>
         ))}
       </TaskContainer>
       
