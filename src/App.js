@@ -78,7 +78,7 @@ function App() {
   return (
     <div className="App" >
       
-      <Header text="ToDo" src={logo} />
+      {/* <Header text="ToDo" src={logo} /> */}
       <NewTask onSubmit={handleFormSubmit} value={inputText} onChange={handleInputChange} placeholder="Enter a todo" type="submit"/>
     
       
