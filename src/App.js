@@ -83,9 +83,15 @@ function App() {
     
       
       <div className='filter-button-container'>
-        <button onClick={() => handleFilterChange('all')}>All</button>
-        <button onClick={() => handleFilterChange('completed')}>Completed</button>
-        <button onClick={() => handleFilterChange('not-completed')}>
+        <button onClick={() => handleFilterChange('all')}  
+        style={{backgroundColor: filter === 'all'? '#649b9b' : 'black'}}>All</button>
+        
+        <button onClick={() => handleFilterChange('completed')}
+        style={{backgroundColor: filter === 'completed'? '#649b9b' : 'black'}}>Completed</button>
+        
+        <button onClick={() => handleFilterChange('not-completed')}
+        style={{backgroundColor: filter === 'not-completed'? '#649b9b' : 'black',
+        }}>
           Not‌ Completed
         </button>
       </div>
