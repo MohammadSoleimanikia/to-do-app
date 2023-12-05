@@ -2,7 +2,7 @@ function Task(props)
 {
     return(
         <div className={`Task${props.completed ? '-completed' : ''}`} >
-            <label className="new-task-flex">
+            <label className="task-item-left flex-center">
             <input type="checkbox" checked={props.completed} onChange={props.handleCheckboxChange}/>
             <p style={{}} className={props.completed ? 'completed' : ''}>{props.text}</p>
             </label>
